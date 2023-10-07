@@ -5,6 +5,8 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class DNIEcuadorianValidator implements ConstraintValidator<EcuadorianDNI, String> {
     private static final Integer CEDULA_LENGTH = 10;
@@ -14,6 +16,11 @@ public class DNIEcuadorianValidator implements ConstraintValidator<EcuadorianDNI
     public boolean isValid(String dni, ConstraintValidatorContext constraintValidatorContext) {
         boolean correctDNI = false;
         if (dni == null) {
+            return false;
+        }
+        Pattern pattern = Pattern.compile("^[0-9]+$");
+        Matcher matcher = pattern.matcher(dni);
+        if (!matcher.matches()) {
             return false;
         }
         if (dni.length() == CEDULA_LENGTH) {

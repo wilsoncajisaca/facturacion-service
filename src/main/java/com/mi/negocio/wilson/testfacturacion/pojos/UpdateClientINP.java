@@ -28,6 +28,7 @@ public class UpdateClientINP {
     private String identificationType;
 
     @Size(min = 10, max = 13, message = "La IDENTIFICACION debe contener entre 10 y 13 caracteres")
+    @Pattern(regexp = Validations.REGEX_DNI_VALIDATION, message = "La identificacion debe contener solo numeros.")
     @EcuadorianDNI
     @JsonProperty("identification")
     @With
