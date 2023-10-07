@@ -3,7 +3,7 @@ Para mayor información acerca de los controllers puede consultar la documentaci
 
 Para levantar el proyecto se debe considerar lo siguiente:
 
-1. Crear el la base de datos: mi-negocio-db
+1. Crear la base de datos: mi-negocio-db
 2. Crear usuario y contraseña: Usuario: mi-negocio, Contraseña: minegocio
 
 Proceder a levantar el proyecto. :) 
